@@ -7,7 +7,7 @@ authors:
     family-names: Sokolovsky
     alias: heydamir
     website: "https://heydamir.design"
-repository-code: "https://github.com/damirsch/unslop"
+repository-code: "https://github.com/heydamir/unslop"
 url: "https://heydamir.design/unslop"
 license: CC-BY-4.0
 abstract: "A Claude skill that turns vibecoded, AI-looking UI into a designed interface, from the creator of the Unslopping series on X."

@@ -11,7 +11,7 @@ unslop is a skill for Claude that turns vibecoded, AI-looking UI into a designed
 For Claude Code, copy the skill into your skills folder.
 
 ```bash
-git clone https://github.com/damirsch/unslop
+git clone https://github.com/heydamir/unslop
 mkdir -p ~/.claude/skills && cp -r unslop/skills/unslop ~/.claude/skills/
 ```
 
@@ -39,9 +39,9 @@ It audits the screen and proposes a direction before it edits anything, so you c
 
 Try it on the two vibecoded screens in [examples](examples).
 
-## Want it done for you
+## Hire the unslopper
 
-If you would rather have a designer do it, Damir unslops one key screen in 3 days, built in your stack, at [heydamir.design/unslop](https://heydamir.design/unslop).
+Would rather have a designer do it? Damir unslops one key screen in 3 days, built in your stack, at [heydamir.design/unslop](https://heydamir.design/unslop).
 
 ## License
 
