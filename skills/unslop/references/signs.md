@@ -54,8 +54,11 @@ Go through every group and note each sign you find with where it lives. Each lin
 - `PRO`, `New ✨`, `Beta 🚀` badges everywhere → remove or one quiet text badge
 - Every element a full pill, from search to buttons to cards → radius by size, nested radius math
 - Charts with rainbow bars, glowing bars, pill shaped bars or uppercase day labels → one or two series, muted grid and mono labels, one highlight color
-- `hover:scale`, `animate-pulse` or `transition-all` on everything → quiet hover color, motion only where it explains a change
-- Logo as a gradient tile with a sparkle and a gradient wordmark → product name as text plus a simple mark
+- Every chart or stack in several shades of the accent, so nothing leads → neutral steps with the accent only on the one thing that matters
+- Sparklines, tallies or mini bars added to every stat card → the number, its label and its change
+- Equal cards side by side, each with the same chart or layout → one main chart, compact stats, varied widths
+- Logo as a gradient tile with a sparkle and a gradient wordmark → product name as text plus a simple flat mark
+- Logo mark as a glossy orb, a gradient ball or a glowing dot → a flat glyph in one solid color, or the wordmark alone
 
 ## Landing pages and heroes
 
@@ -63,7 +66,38 @@ Go through every group and note each sign you find with where it lives. Each lin
 - A headline that could fit any product, like `Supercharge your workflow with AI` → say what the product does for whom
 - Gradient or shimmer on the headline → solid text
 - Floating blobs, orbs, grids and glowing lines behind the hero → plain background or one real product visual
+- Everything stacked and centered, headline, text, buttons and a picture below → an asymmetric split or text over a large product view, see the Layout pass
 - Three or more buttons, or chips and avatars stacked under the buttons → one primary and at most one secondary action
-- `Trusted by 10,000+ teams` with generic logos → remove or show real proof
+- `Trusted by 10,000+ teams`, `Loved by 10,000+`, rows of avatar dots or five stars without a source → ask if it is real, then make it quiet and specific or remove it
 - Parallax and elements floating on scroll → static layout, motion only with a purpose
 - Feature cards with an emoji, a bold title and a vague line each → fewer features, concrete copy, line icons or none
+
+## Visuals
+
+- Glossy 3D blobs, orbs, liquid chrome shapes or a purple nebula as the hero visual → the product itself or one concrete metaphor for what it does
+- Stock robots, glowing brains, circuit lines or holograms for anything AI → remove, or show what the AI actually produces
+- Text, fake buttons or a fake logo baked into an image → real text in the page, a clean image without text
+- An image that does not blend into the page, with a hard edge and a different black → background matched to the page and a soft mask at the edges
+- A visual on every section → one visual where it helps, usually only the hero
+
+## Motion
+
+- `animate-pulse`, `animate-ping` or breathing glows on things that are not live → static
+- `transition-all` and `hover:scale` on cards and buttons → color or surface step on hover, a tiny scale down on press
+- Bouncy springs and overshoot on simple UI → one ease-out curve
+- Everything flying in on load from different directions → one short fade and rise with a small stagger
+- Parallax, floating loops and elements that move on scroll → static layout
+- Animating width, height, top or left → transform and opacity
+
+## Template look
+
+These are not slop, but they are what a cleaned up screen falls back to when nobody made a decision. Watch for them after the passes.
+
+- Pure grey #161616 page, Inter, white text and the old brand color on one button, on a product whose world is warm or bright → a ramp tinted toward the world and an accent from it
+- A headline that would fit another product if you swapped the name → say what this product does, with its own nouns
+- A hero visual that is an empty box or a generic picture → a product preview in code or an image from the world
+- Every product getting the same layout, type and palette → let the direction choose
+
+---
+
+Part of unslop by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), CC BY 4.0. Keep this credit in copies and adaptations.
