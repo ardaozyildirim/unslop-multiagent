@@ -8,6 +8,7 @@ $targets = @(
   (Join-Path $HOME ".claude\skills\unslop"),
   (Join-Path $HOME ".codex\skills\unslop"),
   (Join-Path $HOME ".gemini\config\skills\unslop"),
+  (Join-Path $HOME ".gemini\antigravity-cli\skills\unslop"),
   (Join-Path $HOME ".config\opencode\skills\unslop")
 )
 

@@ -7,6 +7,7 @@ TARGETS=(
   "$HOME/.claude/skills/unslop"
   "$HOME/.codex/skills/unslop"
   "$HOME/.gemini/config/skills/unslop"
+  "$HOME/.gemini/antigravity-cli/skills/unslop"
   "$HOME/.config/opencode/skills/unslop"
 )
 
