@@ -27,7 +27,21 @@ async function browserKit() {
   process.exit(1);
 }
 
-const chrome = [process.env.CHROME_PATH, "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", "/usr/bin/google-chrome", "/usr/bin/chromium"].find((path) => path && existsSync(path));
+const programFiles = process.env.ProgramFiles || "C:\\Program Files";
+const programFilesX86 = process.env["ProgramFiles(x86)"] || "C:\\Program Files (x86)";
+const chrome = [
+  process.env.CHROME_PATH,
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "/usr/bin/google-chrome",
+  "/usr/bin/google-chrome-stable",
+  "/usr/bin/chromium",
+  "/usr/bin/chromium-browser",
+  join(programFiles, "Google", "Chrome", "Application", "chrome.exe"),
+  join(programFilesX86, "Google", "Chrome", "Application", "chrome.exe"),
+  process.env.LOCALAPPDATA && join(process.env.LOCALAPPDATA, "Google", "Chrome", "Application", "chrome.exe"),
+  join(programFiles, "Microsoft", "Edge", "Application", "msedge.exe"),
+  join(programFilesX86, "Microsoft", "Edge", "Application", "msedge.exe"),
+].find((path) => path && existsSync(path));
 const { chromium } = await browserKit();
 const browser = await chromium.launch(chrome ? { executablePath: chrome } : {});
 try {

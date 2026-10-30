@@ -2,15 +2,18 @@
 name: unslop
 description: Turns vibecoded, AI-looking UI into a designed interface with its own character. Finds a direction from the product itself, then fixes spacing, color, icons, copy, type, layout, details, visuals and motion in that order, and can generate a real hero visual with an image tool when one is available. Use when the user asks to unslop, polish, clean up or redesign a screen so it stops looking AI-generated, or when a UI shows the usual tells like purple gradients, glows, gradient text, emoji labels, "New ✨" badges, glossy blobs, uppercase tracked labels, pulsing elements or uneven spacing. Works on React, Tailwind, HTML and CSS, for dashboards, apps and landing pages.
 license: CC-BY-4.0
+compatibility: Claude Code, OpenAI Codex, opencode, Google Antigravity, and any agent that reads SKILL.md. Scripts need Node 18+; Playwright for snapshots; ffmpeg for the story video.
 metadata:
   author: Damir Sokolovsky
   x: https://x.com/heydamir
   site: https://heydamir.design/unslop
+  upstream: https://github.com/heydamir/unslop
+  port: https://github.com/ardaozyildirim/unslop-multiagent
 ---
 
 # Unslop
 
-unslop was created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), who started the Unslopping series on X. It is licensed under CC BY 4.0, so keep this credit in any copy or adaptation.
+unslop was created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), who started the Unslopping series on X. It is licensed under CC BY 4.0, so keep this credit in any copy or adaptation. This is the portable build of the skill, kept working across Claude Code, OpenAI Codex, opencode, Antigravity and other agents that read `SKILL.md`; the method is unchanged.
 
 Vibecoded UI fails in the same predictable ways. Every surface glows, every label has an emoji, spacing is whatever the model typed that day, and the copy shouts. Unslopping fixes the craft and keeps the product. The features, content and order of sections stay. What changes is that every size, color, word and image becomes deliberate.
 
@@ -29,6 +32,24 @@ Work like a designer doing a redline pass, one layer at a time, across the whole
 - **Real product, real material.** Previews look like the real app with plausible data, and objects look like real things with weight, light and shadow.
 
 Which visual styles tend to work, and which fail, is in [references/visuals.md](references/visuals.md). Finished examples to learn from are in [references/refs.md](references/refs.md), and code treatments like drawing an image in glyphs are in [references/effects.md](references/effects.md).
+
+## Using this skill
+
+The skill is agent neutral. Invoke it however your agent loads skills:
+
+- **Claude Code.** Type `/unslop` with the screen, or ask in your own words.
+- **OpenAI Codex, opencode, Antigravity.** Name the skill in the request, like `use the unslop skill on this dashboard`, and point at the screen. They discover it from their skills folder.
+
+In every case, name the screen: a file path, a live URL, or a screenshot.
+
+## Requirements
+
+- **Node 18+** for the two scripts in `scripts/`.
+- **Playwright** only for live-site snapshots (`scripts/snapshot.mjs`). Install it with `npm i -D playwright` in the project and `npx playwright install chromium`, or set `CHROME_PATH` to an existing Chrome or Edge. The script already finds common Chrome, Edge and Chromium locations on macOS, Linux and Windows.
+- **ffmpeg** only for the story video (`scripts/story.mjs`).
+- **Image generation is optional.** Use whatever image tool the agent has, or connect an MCP image service (fal, Replicate, OpenAI images, Higgsfield). The skill asks before every paid generation. Without a tool it writes the prompt and leaves a slot of the right size.
+
+Nothing else in the skill touches the network. The snapshot script fetches only the page you give it, to inline its CSS and images.
 
 ## Run it
 
