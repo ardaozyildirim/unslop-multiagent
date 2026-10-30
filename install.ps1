@@ -4,12 +4,14 @@ $source = Join-Path $PSScriptRoot "skills\unslop"
 if (-not (Test-Path $source)) { throw "skills\unslop not found next to this script." }
 
 $canonical = Join-Path $HOME ".agents\skills\unslop"
-$targets = @(
+$linkTargets = @(
   (Join-Path $HOME ".claude\skills\unslop"),
   (Join-Path $HOME ".codex\skills\unslop"),
-  (Join-Path $HOME ".gemini\config\skills\unslop"),
-  (Join-Path $HOME ".gemini\antigravity-cli\skills\unslop"),
   (Join-Path $HOME ".config\opencode\skills\unslop")
+)
+$copyTargets = @(
+  (Join-Path $HOME ".gemini\config\skills\unslop"),
+  (Join-Path $HOME ".gemini\antigravity-cli\skills\unslop")
 )
 
 if (Test-Path $canonical) {
@@ -20,7 +22,7 @@ if (Test-Path $canonical) {
   Write-Host "Copied skill to $canonical"
 }
 
-foreach ($target in $targets) {
+foreach ($target in $linkTargets) {
   New-Item -ItemType Directory -Force -Path (Split-Path $target) | Out-Null
   if (Test-Path $target) {
     Write-Host "Exists, skipped: $target"
@@ -28,4 +30,14 @@ foreach ($target in $targets) {
   }
   New-Item -ItemType Junction -Path $target -Target $canonical | Out-Null
   Write-Host "Linked $target -> $canonical"
+}
+
+foreach ($target in $copyTargets) {
+  New-Item -ItemType Directory -Force -Path (Split-Path $target) | Out-Null
+  if (Test-Path $target) {
+    Write-Host "Exists, skipped: $target"
+    continue
+  }
+  Copy-Item -Path $canonical -Destination $target -Recurse
+  Write-Host "Copied $target (Antigravity does not follow junctions)"
 }

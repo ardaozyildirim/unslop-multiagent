@@ -33,7 +33,7 @@ Or place the folder yourself:
 | Claude Code | `~/.claude/skills/unslop/` | `.claude/skills/unslop/` |
 | OpenAI Codex | `~/.codex/skills/unslop/` (also reads `~/.agents/skills/`) | `.agents/skills/unslop/` |
 | opencode | `~/.config/opencode/skills/unslop/` (also reads `~/.agents/skills/` and `~/.claude/skills/`) | `.opencode/skills/unslop/` or `.agents/skills/unslop/` |
-| Antigravity | IDE: `~/.gemini/config/skills/unslop/`, CLI: `~/.gemini/antigravity-cli/skills/unslop/` | `.agents/skills/unslop/` |
+| Antigravity | IDE: `~/.gemini/config/skills/unslop/`, CLI: `~/.gemini/antigravity-cli/skills/unslop/` (copied, not linked) | `.agents/skills/unslop/` |
 
 Each entry is the whole `skills/unslop` folder, with `SKILL.md`, `references/` and `scripts/`.
 

@@ -6,9 +6,11 @@ CANONICAL="$HOME/.agents/skills/unslop"
 TARGETS=(
   "$HOME/.claude/skills/unslop"
   "$HOME/.codex/skills/unslop"
+  "$HOME/.config/opencode/skills/unslop"
+)
+COPY_TARGETS=(
   "$HOME/.gemini/config/skills/unslop"
   "$HOME/.gemini/antigravity-cli/skills/unslop"
-  "$HOME/.config/opencode/skills/unslop"
 )
 
 if [ ! -d "$SOURCE" ]; then
@@ -32,4 +34,14 @@ for target in "${TARGETS[@]}"; do
   fi
   ln -s "$CANONICAL" "$target"
   echo "Linked $target -> $CANONICAL"
+done
+
+for target in "${COPY_TARGETS[@]}"; do
+  mkdir -p "$(dirname "$target")"
+  if [ -e "$target" ] || [ -L "$target" ]; then
+    echo "Exists, skipped: $target"
+    continue
+  fi
+  cp -R "$CANONICAL" "$target"
+  echo "Copied $target (Antigravity does not follow symlinks)"
 done
