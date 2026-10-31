@@ -1,17 +1,17 @@
 $ErrorActionPreference = "Stop"
 
-$source = Join-Path $PSScriptRoot "skills\unslop"
-if (-not (Test-Path $source)) { throw "skills\unslop not found next to this script." }
+$source = Join-Path $PSScriptRoot "skills\unslop-portable"
+if (-not (Test-Path $source)) { throw "skills\unslop-portable not found next to this script." }
 
-$canonical = Join-Path $HOME ".agents\skills\unslop"
+$canonical = Join-Path $HOME ".agents\skills\unslop-portable"
 $linkTargets = @(
-  (Join-Path $HOME ".claude\skills\unslop"),
-  (Join-Path $HOME ".codex\skills\unslop"),
-  (Join-Path $HOME ".config\opencode\skills\unslop")
+  (Join-Path $HOME ".claude\skills\unslop-portable"),
+  (Join-Path $HOME ".codex\skills\unslop-portable"),
+  (Join-Path $HOME ".config\opencode\skills\unslop-portable")
 )
 $copyTargets = @(
-  (Join-Path $HOME ".gemini\config\skills\unslop"),
-  (Join-Path $HOME ".gemini\antigravity-cli\skills\unslop")
+  (Join-Path $HOME ".gemini\config\skills\unslop-portable"),
+  (Join-Path $HOME ".gemini\antigravity-cli\skills\unslop-portable")
 )
 
 if (Test-Path $canonical) {

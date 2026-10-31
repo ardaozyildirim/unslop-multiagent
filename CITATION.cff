@@ -1,19 +1,34 @@
 cff-version: 1.2.0
-message: "If you use or adapt unslop, please credit it like this."
-title: "unslop"
+message: "If you use or adapt unslop-portable, please credit it like this. The upstream unslop project by Damir Sokolovsky should also be credited."
+title: "unslop-portable"
 type: software
 authors:
   - given-names: Damir
     family-names: Sokolovsky
     alias: heydamir
     website: "https://heydamir.design"
-repository-code: "https://github.com/heydamir/unslop"
-url: "https://heydamir.design/unslop"
+  - given-names: Arda
+    family-names: Ozyildirim
+    alias: ardaozyildirim
+    website: "https://github.com/ardaozyildirim"
+repository-code: "https://github.com/ardaozyildirim/unslop-portable"
+url: "https://github.com/ardaozyildirim/unslop-portable"
 license: CC-BY-4.0
-abstract: "A Claude skill that turns vibecoded, AI-looking UI into a designed interface, from the creator of the Unslopping series on X."
+abstract: "An unofficial, agent-neutral port of the unslop skill, which turns vibecoded, AI-looking UI into a designed interface. The original skill was created by Damir Sokolovsky (creator of the Unslopping series on X); this port republishes the same method under CC BY 4.0 for Claude Code, OpenAI Codex, opencode, Antigravity and other agents that read SKILL.md."
 keywords:
   - design
   - ui
   - claude
   - skill
+  - agent-skills
   - unslop
+references:
+  - type: software
+    title: "unslop (upstream, by Damir Sokolovsky)"
+    repository-code: "https://github.com/heydamir/unslop"
+    url: "https://heydamir.design/unslop"
+    license: CC-BY-4.0
+    authors:
+      - given-names: Damir
+        family-names: Sokolovsky
+        alias: heydamir

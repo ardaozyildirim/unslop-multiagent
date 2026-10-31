@@ -1,5 +1,5 @@
 ---
-name: unslop
+name: unslop-portable
 description: Turns vibecoded, AI-looking UI into a designed interface with its own character. Finds a direction from the product itself, then fixes spacing, color, icons, copy, type, layout, details, visuals and motion in that order, and can generate a real hero visual with an image tool when one is available. Use when the user asks to unslop, polish, clean up or redesign a screen so it stops looking AI-generated, or when a UI shows the usual tells like purple gradients, glows, gradient text, emoji labels, "New ✨" badges, glossy blobs, uppercase tracked labels, pulsing elements or uneven spacing. Works on React, Tailwind, HTML and CSS, for dashboards, apps and landing pages.
 license: CC-BY-4.0
 compatibility: Claude Code, OpenAI Codex, opencode, Google Antigravity, and any agent that reads SKILL.md. Scripts need Node 18+; Playwright for snapshots; ffmpeg for the story video.
@@ -8,12 +8,15 @@ metadata:
   x: https://x.com/heydamir
   site: https://heydamir.design/unslop
   upstream: https://github.com/heydamir/unslop
-  port: https://github.com/ardaozyildirim/unslop-multiagent
+  port: https://github.com/ardaozyildirim/unslop-portable
+  unofficial: true
 ---
 
-# Unslop
+# Unslop Portable
 
 unslop was created by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), who started the Unslopping series on X. It is licensed under CC BY 4.0, so keep this credit in any copy or adaptation. This is the portable build of the skill, kept working across Claude Code, OpenAI Codex, opencode, Antigravity and other agents that read `SKILL.md`; the method is unchanged.
+
+This is an unofficial port. It is not affiliated with, endorsed by, or supported by the original author. The canonical skill is [heydamir/unslop](https://github.com/heydamir/unslop); install that one if you want the upstream version. This port exists because the skill only shipped for Claude Code, and it is published under the same CC BY 4.0 terms with the original credit kept.
 
 Vibecoded UI fails in the same predictable ways. Every surface glows, every label has an emoji, spacing is whatever the model typed that day, and the copy shouts. Unslopping fixes the craft and keeps the product. The features, content and order of sections stay. What changes is that every size, color, word and image becomes deliberate.
 
@@ -37,8 +40,8 @@ Which visual styles tend to work, and which fail, is in [references/visuals.md](
 
 The skill is agent neutral. Invoke it however your agent loads skills:
 
-- **Claude Code.** Type `/unslop` with the screen, or ask in your own words.
-- **OpenAI Codex, opencode, Antigravity.** Name the skill in the request, like `use the unslop skill on this dashboard`, and point at the screen. They discover it from their skills folder.
+- **Claude Code.** Type `/unslop-portable` with the screen, or ask in your own words.
+- **OpenAI Codex, opencode, Antigravity.** Name the skill in the request, like `use the unslop-portable skill on this dashboard`, and point at the screen. They discover it from their skills folder.
 
 In every case, name the screen: a file path, a live URL, or a screenshot.
 

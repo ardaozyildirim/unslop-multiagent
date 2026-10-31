@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/skills/unslop"
-CANONICAL="$HOME/.agents/skills/unslop"
+SOURCE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/skills/unslop-portable"
+CANONICAL="$HOME/.agents/skills/unslop-portable"
 TARGETS=(
-  "$HOME/.claude/skills/unslop"
-  "$HOME/.codex/skills/unslop"
-  "$HOME/.config/opencode/skills/unslop"
+  "$HOME/.claude/skills/unslop-portable"
+  "$HOME/.codex/skills/unslop-portable"
+  "$HOME/.config/opencode/skills/unslop-portable"
 )
 COPY_TARGETS=(
-  "$HOME/.gemini/config/skills/unslop"
-  "$HOME/.gemini/antigravity-cli/skills/unslop"
+  "$HOME/.gemini/config/skills/unslop-portable"
+  "$HOME/.gemini/antigravity-cli/skills/unslop-portable"
 )
 
 if [ ! -d "$SOURCE" ]; then
-  echo "skills/unslop not found next to this script."
+  echo "skills/unslop-portable not found next to this script."
   exit 1
 fi
 
